@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>the Maze Game</title>
+</head>
+
+<body class="background">
+    <div class="header">
+
+        <h1 class="headText">The Maze </h1>
+        <img class="logo" src="./images/logo.png" alt="logo"></img>
+        <h1 class="headText">Runner</h1>
+    </div>
+    <p class="typeWriter">Help the <span class="color">runner</span> finish his marathon on time</p>
+
+
+    <div id="home">
+        
+        <button class="mainButtons" id="playGame"><span class="mainButtons">PLAY</span></button>
+        <button class="mainButtons" id="setting"><span class="mainButtons">SETTINGS</span></button>
+        <button class="mainButtons" id="LeaderBoard"><span class="mainButtons">LEADERBOARD</span></button>
+   
+        <div id="playOptions">
+            <button class="close">X</button>
+            <div id="playerName">
+                <label>Name </label>
+                <input type="text" id="nickName" nickName="nickName" placeholder="Enter your name">
+            </div>
+            <button class="bar" id="levelFive"><span>Kiddie (5 x 5)</span></button>
+            <button class="bar" id="levelTen"><span>Normal (10 x 10)</span></button>
+            <button class="bar" id="levelTwenty"><span>Laggy (20 x 20)</span></button>
+
+        </div>
+        <div id="settingOption">
+            <button class="close">X</button>
+            <button class="bar" id="sounds"><span>Sounds OFF</span></button>
+            <button class="bar" id="controls"><span>Controls</span></button>
+        </div>
+
+    </div>
+    <div id="overlay"></div>
+
+    <script src="jQ.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="second.js"></script>
+</body>
+
+</html>

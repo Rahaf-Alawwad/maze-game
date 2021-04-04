@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="#">
+    <title>Maze Game</title>
+</head>
+
+<body class="dayNight">
+    <div class="header">
+
+        <h1 class="headText">The Maze </h1>
+        <img class="logo" src="./images/logo.png" alt="logo"></img>
+        <h1 class="headText">Runner</h1>
+    </div>
+    <Section>
+
+        <canvas class="bar" id="maze"></canvas>
+
+        <div class=info class="bar">
+            <p id="timer">Time Remaining <span id=seconds></span></p>
+            <p> <span id="currentName"> ? </span> </p>
+        </div>
+
+    </Section>
+    <div id="gameOver">
+        <h3>game over</h3>
+        <button class="playAgain">Play Again?</button>
+    </div>
+    <div id="controlPhone">
+        <button id="bottomBtn">▼</button>
+
+
+        <button id="leftBtn">&lt;</button>
+        <button id="rightBtn">&gt;</button>
+
+
+        <button id="topBtn">▲</button>
+
+
+    </div>
+
+    <div id="overlay"></div>
+
+    <script src="jQ.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handtrackjs/dist/handtrack.min.js"> </script>
+    <script src="main.js"></script>
+</body>
+
+</html>
