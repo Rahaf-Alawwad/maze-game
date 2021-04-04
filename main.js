@@ -276,8 +276,9 @@ function play(e) {
     if (Math.floor(preX / width) == col - 1 && Math.floor(preY / height) == randEnd) {
 
         clearInterval(timer)
-        time = document.getElementById("timer").innerText;
-
+        time = document.getElementById("seconds").innerText;
+        console.log(time);
+        localStorage.setItem("currentTime",time);
         ctx.drawImage(won, preX + width / 15, preY - height / 20, width - width / 3, height - height / 3);
 
         win.play();
@@ -291,6 +292,7 @@ function play(e) {
 
 // insert player name and time 
 document.getElementById("currentName").innerText = currentPlayer;
+
 
 
 
