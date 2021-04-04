@@ -276,7 +276,7 @@ function play(e) {
     if (Math.floor(preX / width) == col - 1 && Math.floor(preY / height) == randEnd) {
 
         clearInterval(timer)
-        time = document.getElementById("seconds").innerText;
+        time = document.getElementById("timer").innerText;
 
         ctx.drawImage(won, preX + width / 15, preY - height / 20, width - width / 3, height - height / 3);
 
