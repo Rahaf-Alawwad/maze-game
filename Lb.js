@@ -17,7 +17,7 @@ function dayChecker() {
     const hours = new Date().getHours()
 
     if (hours > 4 && hours < 17){
-        $('.dayNight').css('background-image', 'url("http://37.media.tumblr.com/73c5ee436a8c132ef8fb4d27e7fa4c92/tumblr_n3xkdnRid41r3ho60o1_500.gif")');
+        $('.dayNight').css('background-image', 'url("./images/day.gif")');
     }
 }
 
