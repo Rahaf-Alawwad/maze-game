@@ -68,10 +68,11 @@ function mazeChooser(size) {
 
 try {
 
+    console.log("Getting the top five players")
     document.getElementById("who").innerText += localStorage.getItem("currentPlayer");
     document.getElementById("howLong").innerText += localStorage.getItem("currentTime");
 } catch (error) {
-    console.log("No player results")
+    console.log("No players")
 }
 
 $("#LeaderBoard").click(function () {
