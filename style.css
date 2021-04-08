@@ -116,7 +116,6 @@ h1{
         flex-grow:1;
         font-size: 2vw;
         padding-left:10px;
-        background-color: #94d6d2;
         
     }
     #controlPhone{
@@ -126,8 +125,8 @@ h1{
         display:flex;
         flex-direction: column; 
         align-items: center;
-        height: 65vh;
-        width: 70vw;
+        height: 75vh;
+        width: 50vw;
     }
     .whiteBackground{
         width:65vw;
@@ -182,6 +181,7 @@ h1{
         flex-grow:1;
         font-size: 2vh;
         padding-left:10px;
+        white-space: nowrap;
     }
     #controlPhone{
         transform: scale(1);
@@ -207,7 +207,7 @@ h1{
         display:flex;
         flex-direction: column; 
         align-items: center;
-        height: 70vh;
+        height: 65vh;
         width: 90vw;
 
     }
