@@ -305,7 +305,7 @@ document.getElementById("currentName").innerText = currentPlayer;
 
 
 //timer depends on the size of the maze
-var countDown = (row * 3)-1;
+var countDown = (row * 3)-2;
 var seconds = countDown;
 
 

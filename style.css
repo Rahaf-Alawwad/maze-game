@@ -280,7 +280,7 @@ h1{
 }
 
 #gameOver{
-    top:50%;
+    top:40%;
     position: absolute;
     transform:scale(0);
     display:flex;
@@ -321,15 +321,14 @@ h1{
 }
 
 #resultOptions{
-    top:50%;
+    top:40%;
     position: absolute;
     transform:scale(0);
     display:flex;
     flex-direction: column;
     width:100%;
-    height:5vh;
+    height:15vh;
     padding-bottom: 5%; 
-    font-size:3vw;
     background-color:rgb(34, 23, 23);
     color:white;
     font-weight: bolder;
@@ -337,7 +336,9 @@ h1{
     align-items: center;
     text-transform: capitalize;
     z-index: 10;
-    
+}
+#resultOptions *{
+    font-size:3vw;
 }
 #homeScreen{
     cursor: pointer;
