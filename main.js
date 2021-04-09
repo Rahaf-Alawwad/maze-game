@@ -215,6 +215,7 @@ character.src = "./images/char_.png";
 finishLine.src = "./images/end.webp";
 passed.src = "./images/passed.jpg";
 won.src = "./images/finish.png";
+won.style.backgroundColor = "black";
 
 var x = width / row;
 var y = ((randStart * height) + (height / 3));
