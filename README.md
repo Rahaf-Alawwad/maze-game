@@ -1,30 +1,36 @@
-# The Maze Game
-#  How to Play?
-1. Choose difficulty level:
+# [The Maze Runner Game](https://rahaf-alawwad.github.io/maze-game/)
+
+<p float="left">
+<img src="./images/website.JPG" height="300" width="400">
+<img src="./images/ipad.JPG" height="250">
+<img src="./images/iphone.JPG" width="100">
+</p>
+
+# How to Play?
+1. Enter [The Maze Runner Game](https://rahaf-alawwad.github.io/maze-game/) 
+2. Choose a difficulty level:
 * 5 by 5 : really easy and mostly one clear path and thus the timer is only 15 seconds.
 
 * 10 by 10 : normal and the timer is 30 seconds.
 
-* 20 by 20 : difficult and takes more time to draw and the timer is 60 seconds.
-2. Try to beat the timer (Think Fast!)
-3. Try to get your name on the leader board.
+* 20 by 20 : difficult and takes more time to generate the maze and the timer is 60 seconds.
+
+3. Try to beat the timer (Think Fast!)
+4. Try to get your name on the leader board.
 
 # List of technologies used in this project:
 
-<li> HTML
-<li> CSS
-<li> Java Script
-<li> JSON
-<li> ![Mockplus WireFrame Tool](https://www.mockplus.com)
-<li> Visual code
+* HTML
+* CSS
+* JavaScript
+* [Mockplus WireFrame Tool](https://www.mockplus.com)
+* Visual code
+
 
 # Wireframes:
-![index](images/index_wireframe.JPG )
-![options_popup](images/options_wireframe.JPG)
-![setting](images/settings_wireframe.JPG)
-![leaderBoard](images/leaderBoard_wireframe.JPG)
-![maze](images/maze_wireframe.JPG)
-![results](images/result_wireframe.JPG )
+
+![Full_WireFrame](images/fullWireFrame.JPG)
+
 
 # User Stories:
 <li> As a player, I want to have control over the audio of the game, so that I can disable it if I found it distracting.
@@ -36,7 +42,7 @@
 # Planning/Development process:
 
 <li> Create new repository.
-<li>Create the empty files for each wireframe.
+<li> Create the empty files for each wireframe.
 <li> Determine the best algorithm to generate the maze.
 <li> Implement the maze generator algorithm and draw the maze on the canvas.
 <li> Add the character.
@@ -44,16 +50,13 @@
 <li> Style the pages with uniform design.
 <li> Add local storage for necessary variables.
 <li> Sort the leader Board variable with each win.
-<li>Create the readme file.
+<li> Deploy
 
-# Structure:
-1. One Style CSS file for all pages.
-2. Two java script files:
-* main.js : maze.html
-* second.js : (index, results, leaderBoard).js
 
 # Main function:
 ```
+
+//recursive backtracking to generate a maze 
 function dfs(cell) {
 
     cell.seen = true;
@@ -65,11 +68,13 @@ function dfs(cell) {
         clearPath(cell, next);
         dfs(next);
 
+
     } else if (stack.length > 0) {
         next = stack.pop();
         dfs(next);
     }
-    drawCell();
+
+    drawCell(cell)
     if (stack.length == 0) { return }
 }
 ```
@@ -78,5 +83,4 @@ The depth first search algorithm allow the users to obtain different and random 
 This method can also be implemented to solve the maze.
 
 # Future Work For The Maze
-<li> Improve the design 
-<li> Add cam-based control
+<li> Add cam-based control</li>
