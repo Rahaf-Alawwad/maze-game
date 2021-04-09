@@ -385,9 +385,9 @@ function dayChecker() {
     }
 }
 window.onload = function () {
-    //localStorage.removeItem("topPlayers")
-    //localStorage.removeItem("topTimes")
-    //localStorage.removeItem("playerCount")
+    localStorage.removeItem("topPlayers")
+    localStorage.removeItem("topTimes")
+    localStorage.removeItem("playerCount")
     
     //check time for background image 
     dayChecker()
