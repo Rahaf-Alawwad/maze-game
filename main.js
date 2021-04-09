@@ -35,8 +35,9 @@ gameOver.src = "./audio/gameOver.mp3"
 gameOver.muted = sounds;
 
 
-
-
+var countDown = (row * 3);
+var seconds = countDown;
+document.getElementById("seconds").innerHTML = seconds;
 
 let ev = new Event("click");
 
@@ -305,8 +306,7 @@ document.getElementById("currentName").innerText = currentPlayer;
 
 
 //timer depends on the size of the maze
-var countDown = (row * 3)-2;
-var seconds = countDown;
+
 
 
 
