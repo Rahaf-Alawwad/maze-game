@@ -14,7 +14,10 @@ var randEnd = getRandom();
 
 var model = null;
 
+//win time
 var time;
+//countdown timer
+var timer;
 //check if the user disabled the sounds
 var sounds = localStorage.getItem("sounds") == "ON" ? true : false;
 console.log("Sounds are " + localStorage.getItem("sounds"))
@@ -218,9 +221,11 @@ var y = ((randStart * height) + (height / 3));
 
 
 
+var firstMove = true;
 
 //check controls
 function play(e) {
+    if(firstMove){startTimer();firstMove =false;}   
     e.preventDefault();
     ctx.beginPath();
     preX = x;
@@ -258,6 +263,7 @@ function play(e) {
         if (!grid[xCell][yCell].left) {
             x -= width
             allowedMove = true;
+            console.log()
 
         }
         leftBtn = false;
@@ -278,11 +284,11 @@ function play(e) {
         clearInterval(timer)
         time = document.getElementById("seconds").innerText;
         console.log(time);
-        localStorage.setItem("currentTime",time);
+        localStorage.setItem("currentTime", time);
         ctx.drawImage(won, preX + width / 15, preY - height / 20, width - width / 3, height - height / 3);
 
         win.play();
-        
+
         // allow time to play the win sound
         setTimeout(function () { winner(); location.href = "results.html"; }, 2000);
 
@@ -298,16 +304,16 @@ document.getElementById("currentName").innerText = currentPlayer;
 
 
 //timer depends on the size of the maze
-var countDown = row * 3;
+var countDown = (row * 3)-1;
 var seconds = countDown;
-timer = setInterval(function () { secondsCount(); }, 1000)
+
 
 
 function secondsCount() {
     if (seconds > 0) {
         if (seconds < countDown / 2 + 1) {
             document.getElementById("timer").style.color = "#b40404";
-            document.getElementById("timer").style.animation= "pulse 2s infinite";
+            document.getElementById("timer").style.animation = "pulse 2s infinite";
         }
         document.getElementById("seconds").innerHTML = --seconds;
     }
@@ -316,7 +322,6 @@ function secondsCount() {
         document.getElementById("gameOver").classList.add("active");
         clearInterval(timer)
         gameOver.play();
-
         document.onkeydown = function (e) { e.preventDefault(); }
     }
 
@@ -326,8 +331,6 @@ function secondsCount() {
 
 //traverse to the correct position for the leader boaed 
 function winner() {
-
-
     //localStoragereturns string and JSON parse convert it to an array
     topPlayers = localStorage.getItem("topPlayers") != null ? JSON.parse(localStorage.getItem("topPlayers")) : new Array();
     topTimes = localStorage.getItem("topTimes") != null ? JSON.parse(localStorage.getItem("topTimes")) : new Array();
@@ -337,16 +340,11 @@ function winner() {
 
 
     if (topPlayers.length > 0) {
-
         while (topPlayers.length > 0) {
-
             tempTimeop = topTimes.pop();
             if (parseInt(time) > parseInt(tempTimeop)) {
-
-
                 remainingPlayers.push(topPlayers.pop());
                 remainingTimes.push(tempTimeop)
-
             }
             else {
                 topTimes.push(tempTimeop);
@@ -355,72 +353,70 @@ function winner() {
                     topTimes.push(time);
                 }
                 break;
-
             }
-
         }
-
-
-
         while (topPlayers.length < 5 && remainingPlayers.length > 0) {
-
             topPlayers.push(remainingPlayers.pop())
             topTimes.push(remainingTimes.pop())
         }
-
     }
-
     else {
-
         topPlayers.push(currentPlayer);
         topTimes.push(time);
-
     }
     players = JSON.stringify(topPlayers)
     times = JSON.stringify(topTimes);
 
     localStorage.setItem("topPlayers", players)
     localStorage.setItem("topTimes", times)
-
 }
 
 
 function dayChecker() {
     const hours = new Date().getHours()
-    if (hours > 4 && hours < 17) {
+    if (hours > 7 && hours < 20) {
         $('.dayNight').css('background-image', 'url("./images/day.gif")');
-        $('.dayNight').css({'background-blend-mode':'lighten', 'background-color': 'rgba(248, 248, 248, 0.2)'});
+        $('.dayNight').css({ 'background-blend-mode': 'lighten', 'background-color': 'rgba(248, 248, 248, 0.2)' });
     }
 }
 window.onload = function () {
     //localStorage.removeItem("topPlayers")
     //localStorage.removeItem("topTimes")
     //localStorage.removeItem("playerCount")
-
+    
     //check time for background image 
     dayChecker()
     //draw the grid 
     makeGrid()
     //create the maze
     dfs(grid[col - 1][randEnd])
+    grid[0][randStart].left = true;
+    console.log(grid[0][randStart].left)
     ctx.drawImage(character, x + width / 7, y, width / 2, height / 2);
 
     ctx.drawImage(finishLine, (((row - 1) * width) + (width / 3)), (randEnd * height + height / 3), width - width / 3, height - height / 3);
     ctx.stroke();
+    
+
+    
+       
 }
-
-
-$(".playAgain").click(function () { window.location.href = window.location.href });
 
 document.onkeydown = play;
 
+$(".playAgain").click(function () { window.location.href = window.location.href });
+
+
+function startTimer() {
+
+    timer = setInterval(function () { secondsCount(); }, 1000)
+
+}
 
 $("#topBtn").click(function () { topBtn = true; play(ev) });
 $("#rightBtn").click(function () { rightBtn = true; play(ev) });
 $("#leftBtn").click(function () { leftBtn = true; play(ev) });
 $("#bottomBtn").click(function () { bottomBtn = true; play(ev) });
-
-
 
 
 

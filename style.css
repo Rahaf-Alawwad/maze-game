@@ -102,6 +102,10 @@ h1{
     color:#F3E9FC;
     
 }
+#CurrentPlayerName{
+    text-align: end;
+    color:rgb(209, 228, 250);
+}
 .bar{
     background-color:  rgb(165, 155, 97);
     font-size:2vh;
@@ -309,7 +313,38 @@ h1{
     font-weight:bold;
     cursor: pointer;
     width: 100%;
+}
+.playAgain p{
+    animation : "pulse 2s infinite";
+    color:red;
 
+}
+
+#resultOptions{
+    top:50%;
+    position: absolute;
+    transform:scale(0);
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    height:5vh;
+    padding-bottom: 5%; 
+    font-size:3vw;
+    background-color:rgb(34, 23, 23);
+    color:white;
+    font-weight: bolder;
+    text-align: center;
+    align-items: center;
+    text-transform: capitalize;
+    z-index: 10;
+    
+}
+#homeScreen{
+    cursor: pointer;
+}
+
+#resultOptions.active{
+    transform:scale(1);
 }
 
 #overlay{

@@ -1,5 +1,9 @@
 // Connected HTML: index, setting, results, leaderboard
 
+
+//default sound are on
+localStorage.setItem("sounds", "ON")
+
 $("#playGame").click(function () {
     document.getElementById("overlay").classList.add("active");
     document.getElementById("playOptions").classList.add("active");
@@ -15,6 +19,16 @@ $("#setting").click(function () {
     document.getElementById("settingOption").classList.add("active");
 });
 
+setTimeout(function () { document.getElementById("overlay").classList.add("active"); document.getElementById("resultOptions").classList.add("active"); }, 3000);
+
+$("#homeScreen").click(function () {
+    location.href = "index.html"
+
+})
+$("#nextLevel").click(function () {
+    mazeChooser((parseInt(localStorage.getItem("mazeSize"))+1))
+
+})
 
 //check local storage for the user preference on sounds
 $("#sounds").click(function () {
@@ -34,7 +48,7 @@ $("#sounds").click(function () {
 function dayChecker() {
     const hours = new Date().getHours()
 
-    if (hours > 4 && hours < 17){
+    if (hours > 7 && hours < 20){
         $('.dayNight').css('background-image', 'url("./images/day.gif")');
     }
 }
