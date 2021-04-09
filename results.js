@@ -4,3 +4,13 @@ $("#homeScreen").click(function () {
     location.href = "index.html"
 
 })
+
+
+$("#nextLevel").click(function () {
+    
+
+    localStorage.setItem("mazeSize", (parseInt(localStorage.getItem("mazeSize"))+1))
+    location.href = "maze.html";
+
+})
+
