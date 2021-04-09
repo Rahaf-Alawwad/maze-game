@@ -72,10 +72,9 @@ text-align: left;
     
     width: 7%;
     height:8%;
- 
-
     
 }
+
 #maze{
 
     width:100%;
@@ -104,7 +103,7 @@ h1{
 }
 #CurrentPlayerName{
     text-align: end;
-    color:rgb(209, 228, 250);
+    color:rgb(163, 169, 177);
 }
 .bar{
     background-color:  rgb(165, 155, 97);

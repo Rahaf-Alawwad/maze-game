@@ -211,11 +211,13 @@ var finishLine = document.createElement("img");
 var passed = document.createElement("img");
 var won = document.createElement("img");
 
+
 character.src = "./images/char_.png";
 finishLine.src = "./images/end.webp";
 passed.src = "./images/passed.jpg";
 won.src = "./images/finish.png";
 won.style.backgroundColor = "black";
+
 
 var x = width / row;
 var y = ((randStart * height) + (height / 3));
@@ -290,9 +292,9 @@ function play(e) {
         ctx.drawImage(won, preX + width / 15, preY - height / 20, width - width / 3, height - height / 3);
 
         win.play();
-
+        winner();
         // allow time to play the win sound
-        setTimeout(function () { winner(); location.href = "results.html"; }, 2000);
+        setTimeout(function () {  location.href = "results.html"; }, 2000);
 
     }
 
@@ -300,9 +302,6 @@ function play(e) {
 
 // insert player name and time 
 document.getElementById("currentName").innerText = currentPlayer;
-
-
-
 
 
 //timer depends on the size of the maze
@@ -320,10 +319,12 @@ function secondsCount() {
         document.getElementById("seconds").innerHTML = --seconds;
     }
     else {
+       
         document.getElementById("overlay").classList.add("active");
         document.getElementById("gameOver").classList.add("active");
         clearInterval(timer)
         gameOver.play();
+        $(".logo").css("filter", "grayscale(1) invert(1)");
         document.onkeydown = function (e) { e.preventDefault(); }
     }
 
@@ -333,15 +334,17 @@ function secondsCount() {
 
 //traverse to the correct position for the leader boaed 
 function winner() {
+    
     //localStoragereturns string and JSON parse convert it to an array
     topPlayers = localStorage.getItem("topPlayers") != null ? JSON.parse(localStorage.getItem("topPlayers")) : new Array();
     topTimes = localStorage.getItem("topTimes") != null ? JSON.parse(localStorage.getItem("topTimes")) : new Array();
 
     remainingPlayers = new Array();
     remainingTimes = new Array();
-
+    console.log("hello")
 
     if (topPlayers.length > 0) {
+        
         while (topPlayers.length > 0) {
             tempTimeop = topTimes.pop();
             if (parseInt(time) > parseInt(tempTimeop)) {

@@ -2,7 +2,7 @@
 
 
 //default sound are on
-localStorage.setItem("sounds", "ON")
+localStorage.setItem("sounds", "OFF")
 
 $("#playGame").click(function () {
     document.getElementById("overlay").classList.add("active");
