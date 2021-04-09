@@ -4,7 +4,3 @@ $("#homeScreen").click(function () {
     location.href = "index.html"
 
 })
-$("#nextLevel").click(function () {
-    mazeChooser((parseInt(localStorage.getItem("mazeSize"))+1))
-
-})

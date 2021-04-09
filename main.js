@@ -283,6 +283,7 @@ function play(e) {
     if (Math.floor(preX / width) == col - 1 && Math.floor(preY / height) == randEnd) {
 
         clearInterval(timer)
+        ctx.fillRect(preX, preY, width, height/2);
         time = document.getElementById("seconds").innerText;
         console.log(time);
         localStorage.setItem("currentTime", time);

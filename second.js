@@ -19,7 +19,10 @@ $("#setting").click(function () {
     document.getElementById("settingOption").classList.add("active");
 });
 
+$("#nextLevel").click(function () {
+    mazeChooser((parseInt(localStorage.getItem("mazeSize"))+1))
 
+})
 
 //check local storage for the user preference on sounds
 $("#sounds").click(function () {
