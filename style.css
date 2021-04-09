@@ -103,7 +103,7 @@ h1{
 }
 #CurrentPlayerName{
     text-align: end;
-    color:rgb(163, 169, 177);
+   
 }
 .bar{
     background-color:  rgb(165, 155, 97);
@@ -285,23 +285,23 @@ h1{
     display:flex;
     flex-direction: column;
     width:100%;
-    height:2vh;
+    height:9vh;
     padding-bottom: 5%; 
-    font-size:3vw;
     background-color:rgb(34, 23, 23);
     color:white;
     font-weight: bolder;
     text-align: center;
+    align-items: center;
     text-transform: capitalize;
     z-index: 10;
-
+    margin:0;
 }
 
 #gameOver.active{
     transform:scale(1);
 }
 #gameOver *{
-    margin:0;
+  
     font-size:3vw;
 
 }
