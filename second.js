@@ -19,16 +19,7 @@ $("#setting").click(function () {
     document.getElementById("settingOption").classList.add("active");
 });
 
-setTimeout(function () { document.getElementById("overlay").classList.add("active"); document.getElementById("resultOptions").classList.add("active"); }, 3000);
 
-$("#homeScreen").click(function () {
-    location.href = "index.html"
-
-})
-$("#nextLevel").click(function () {
-    mazeChooser((parseInt(localStorage.getItem("mazeSize"))+1))
-
-})
 
 //check local storage for the user preference on sounds
 $("#sounds").click(function () {

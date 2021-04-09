@@ -315,8 +315,8 @@ h1{
     width: 100%;
 }
 .playAgain p{
-    animation : "pulse 2s infinite";
-    color:red;
+    animation : pulse 2s infinite;
+    color:black;
 
 }
 
