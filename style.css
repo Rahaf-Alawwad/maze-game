@@ -288,7 +288,7 @@ h1{
     display:flex;
     flex-direction: column;
     width:100%;
-    height:13vh;
+    height:11vh;
     padding-bottom: 5%; 
     background-color:rgb(34, 23, 23);
     color:white;
@@ -315,6 +315,7 @@ h1{
     font-weight:bold;
     cursor: pointer;
     width: 100%;
+    
 }
 .playAgain p{
     animation : pulse 2s infinite;
@@ -329,7 +330,7 @@ h1{
     display:flex;
     flex-direction: column;
     width:100%;
-    height:13vh;
+    height:11vh;
     padding-bottom: 5%; 
     background-color:rgb(34, 23, 23);
     color:white;
