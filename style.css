@@ -174,9 +174,7 @@ h1{
         font-size: 2vw;
         letter-spacing: 10px;
     }
-    .back{
-        width:6%;
-    }
+
 
 }
 @media screen and (orientation:portrait) {
@@ -275,9 +273,7 @@ h1{
         letter-spacing: -1px;
        
     }
-    .back{
-        width:8%;
-    }
+
 }
 
 .result{
@@ -565,7 +561,14 @@ img{
 .back{
     position:absolute;
     top:2vh;
-    left:2vw;
+    left:3vw;
+    width:6%;
     cursor: pointer;
 }
- 
+.back:hover{
+left:2vw;
+}
+.back:active{
+   
+    width:5%
+}
