@@ -30,7 +30,7 @@ body{
     margin:0;
 }
 .dayNight{
-    background-image: url("./images/night.gif");
+    background-image: url("./images/day.gif");
     background-blend-mode: lighten;
     background-color: rgba(248, 248, 248, 0.253);
     background-size: cover;

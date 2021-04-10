@@ -384,7 +384,7 @@ function winner() {
 function dayChecker() {
     const hours = new Date().getHours()
     if (hours > 7 && hours < 20) {
-        $('.dayNight').css('background-image', 'url("./images/day.gif")');
+        $('.dayNight').css('background-image', 'url("./images/night.gif")');
         $('.dayNight').css({ 'background-blend-mode': 'lighten', 'background-color': 'rgba(248, 248, 248, 0.2)' });
     }
 }
