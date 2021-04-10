@@ -13,6 +13,9 @@ for (var i = 0; i < playersList.length; i++) {
     }
 }
 
+//back button 
+$(".back").click(function () {  location.href = "index.html"})
+
 function dayChecker() {
     const hours = new Date().getHours()
 

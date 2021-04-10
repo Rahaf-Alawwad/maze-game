@@ -35,6 +35,10 @@ gameOver.src = "./audio/gameOver.mp3"
 gameOver.muted = sounds;
 
 
+//back button
+
+$(".back").click(function () {  location.href = "index.html"})
+
 var countDown = (row * 3);
 var seconds = countDown;
 document.getElementById("seconds").innerHTML = seconds;
@@ -287,8 +291,8 @@ function play(e) {
 
         clearInterval(timer)
         ctx.fillRect(preX, preY, width, height/2);
-        time = document.getElementById("seconds").innerText;
-        console.log(time);
+        time = countDown - document.getElementById("seconds").innerText;
+        
         localStorage.setItem("currentTime", time);
         ctx.drawImage(won, preX + width / 15, preY - height / 20, width - width / 3, height - height / 3);
 
@@ -401,10 +405,7 @@ window.onload = function () {
 
     ctx.drawImage(finishLine, (((row - 1) * width) + (width / 3)), (randEnd * height + height / 3), width - width / 3, height - height / 3);
     ctx.stroke();
-    
-
-    
-       
+      
 }
 
 document.onkeydown = play;
