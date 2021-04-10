@@ -39,7 +39,7 @@ $("#sounds").click(function () {
 function dayChecker() {
     const hours = new Date().getHours()
 
-    if (hours > 7 && hours < 20){
+    if (hours < 7 && hours > 20){
         $('.dayNight').css('background-image', 'url("./images/night.gif")');
     }
 }
